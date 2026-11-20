@@ -21,6 +21,17 @@ ARCHIVO_BINARIO = "contactos.dat"
 # Autor: Álvaro Leandro Gutiérrez Carranza
 # ------------------------------------------------------------
 
+def leer_texto():
+    print("\n--- LISTA DE CONTACTOS (TEXTO) ---")
+    if not os.path.exists(ARCHIVO_TEXTO):
+        print("El archivo no existe.")
+        return
+    with open(ARCHIVO_TEXTO, "r", encoding="utf-8") as archivo:
+        for i, linea in enumerate(archivo.readlines(), 1):
+            datos = linea.strip().split(",")
+            if len(datos) == 2:
+                print(f"{i}. Nombre: {datos[0]} | Teléfono: {datos[1]}")
+
 
 
 # ------------------------------------------------------------
