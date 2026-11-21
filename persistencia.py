@@ -44,6 +44,30 @@ def leer_texto():
 # ------------------------------------------------------------
 # ETAPA 4: MANEJO DE ARCHIVOS BINARIOS
 # Autor: Anthony Rene Terraz Terrones
+def guardar_binario():
+    print("\n--- GUARDANDO EN BINARIO ---")
+    if not os.path.exists(ARCHIVO_TEXTO):
+        print("No hay contactos.")
+        return
+    contactos = []
+    with open(ARCHIVO_TEXTO, "r", encoding="utf-8") as archivo:
+        for linea in archivo:
+            datos = linea.strip().split(",")
+            if len(datos) == 2:
+                contactos.append({"nombre": datos[0], "telefono": datos[1]})
+    with open(ARCHIVO_BINARIO, "wb") as archivo_bin:
+        pickle.dump(contactos, archivo_bin)
+    print("Guardado en binario.")
+
+def leer_binario():
+    print("\n--- LEYENDO BINARIO ---")
+    if not os.path.exists(ARCHIVO_BINARIO):
+        print("Archivo binario no existe.")
+        return
+    with open(ARCHIVO_BINARIO, "rb") as archivo_bin:
+        contactos = pickle.load(archivo_bin)
+        for c in contactos:
+            print(f"Nombre: {c['nombre']} | Tel: {c['telefono']}")
 # ------------------------------------------------------------
 
 
