@@ -11,4 +11,12 @@
 # de equipos y muestre un resumen cuántos están disponibles 
 # y cuántos están prestados en total.
 # ------------------------------------------------------------
-# PEGA TU CÓDIGO AQUÍ
+# 
+def generar_reporte(lista_equipos):
+    print("\n--- REPORTE GENERAL ---")
+    total = len(lista_equipos)
+    disponibles = sum(1 for eq in lista_equipos if eq["estado"] == "Disponible")
+    prestados = total - disponibles
+    print(f"Total equipos: {total}")
+    print(f"Disponibles: {disponibles}")
+    print(f"Prestados: {prestados}")
