@@ -52,11 +52,21 @@ entregas = [
 # ------------------------------------------------------------
 # ETAPA 4: FUNCIÓN RECURSIVA SIMPLE Y VALIDACIONES
 # Autor: Anthony Rene Terraz Terrones
-# INSTRUCCIONES: Crea 'factorial_recursivo(n)' o 'potencia_recursiva(base, exp)'
-# Además, crea una función 'validar_entrada(valor)' que evite negativos o vacíos.
 # ------------------------------------------------------------
 
-# PEGA TU CÓDIGO AQUÍ
+def validar_entrada(valor):
+    if not valor.strip():
+        return False
+    try:
+        num = int(valor)
+        return num >= 0
+    except ValueError:
+        return False
+
+def factorial_recursivo(n):
+    if n <= 1:
+        return 1
+    return n * factorial_recursivo(n - 1)
 
 
 
