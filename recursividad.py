@@ -46,7 +46,16 @@ entregas = [
 # ------------------------------------------------------------
 
 # PEGA TU CÓDIGO AQUÍ
+def contar_palabra_recursivo(lista, palabra, indice):
+    if indice == len(lista):
+        return 0
 
+    archivo = lista[indice]["archivo"].lower()
+
+    if palabra.lower() in archivo:
+        return 1 + contar_palabra_recursivo(lista, palabra, indice + 1)
+
+    return contar_palabra_recursivo(lista, palabra, indice + 1)
 
 
 # ------------------------------------------------------------
