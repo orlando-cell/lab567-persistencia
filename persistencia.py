@@ -39,6 +39,21 @@ def leer_texto():
 # Autor: Zinedine Michael Callirgos Cabanillas
 # ------------------------------------------------------------
 
+def buscar_contacto():
+    print("\n--- BUSCAR CONTACTO ---")
+    if not os.path.exists(ARCHIVO_TEXTO):
+        print("Error: No hay contactos.")
+        return
+    busqueda = input("Nombre a buscar: ").lower()
+    encontrado = False
+    with open(ARCHIVO_TEXTO, "r", encoding="utf-8") as archivo:
+        for linea in archivo:
+            datos = linea.strip().split(",")
+            if len(datos) == 2 and busqueda in datos[0].lower():
+                print(f"Encontrado: {datos[0]} | Tel: {datos[1]}")
+                encontrado = True
+    if not encontrado: 
+        print("No se encontro el contacto.")
 
 
 # ------------------------------------------------------------
