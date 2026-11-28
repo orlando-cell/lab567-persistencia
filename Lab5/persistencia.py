@@ -13,6 +13,15 @@ ARCHIVO_BINARIO = "contactos.dat"
 # ETAPA 1: ESCRITURA DE ARCHIVO DE TEXTO (Añadir sin sobrescribir)
 # Autor: Cristian Omar Huamán Rojas
 # ------------------------------------------------------------
+def agregar_contacto():
+    print("\n--- NUEVO CONTACTO ---")
+    nombre = input("Ingrese el nombre: ")
+    telefono = input("Ingrese el telefono: ")
+    
+    with open(ARCHIVO_TEXTO, "a", encoding="utf-8") as archivo:
+        archivo.write(f"{nombre},{telefono}\n")
+    
+    print(f"Contacto '{nombre}' guardado en {ARCHIVO_TEXTO}.")
 
 
 

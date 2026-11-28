@@ -19,22 +19,19 @@ entregas = [
 # ------------------------------------------------------------
 # ETAPA 1: SUMATORIA RECURSIVA DE PUNTAJES
 # Autor: Cristian Omar Huamán Rojas
-# INSTRUCCIONES: Crea la función recursiva 'sumar_puntajes_recursivo(lista, indice)' 
-# que sume los puntajes. Caso base: si indice == len(lista) retornar 0.
-# ------------------------------------------------------------
+#------------------------------------------------------------
 
-# PEGA TU CÓDIGO AQUÍ
+def sumar_puntajes_recursivo(lista, indice):
+    if indice == len(lista):
+        return 0
+    return lista[indice]["puntaje"] + sumar_puntajes_recursivo(lista, indice + 1)
 
 
 
 # ------------------------------------------------------------
 # ETAPA 2: BÚSQUEDA RECURSIVA DE ESTUDIANTE
 # Autor: Álvaro Leandro Gutiérrez Carranza
-# INSTRUCCIONES: Crea la función recursiva 'buscar_estudiante_recursivo(lista, codigo, indice)'
-# que retorne el diccionario si lo encuentra, o None si no existe.
-# ------------------------------------------------------------
 
-# PEGA TU CÓDIGO AQUÍ
 def buscar_estudiante_recursivo(lista, codigo, indice):
     if indice == len(lista):
         return None
@@ -46,11 +43,9 @@ def buscar_estudiante_recursivo(lista, codigo, indice):
 # ------------------------------------------------------------
 # ETAPA 3: CONTEO RECURSIVO DE PALABRAS CLAVE
 # Autor: Zinedine Michael Callirgos Cabanillas
-# INSTRUCCIONES: Crea 'contar_palabra_recursivo(lista, palabra, indice)'
-# que cuente cuántos archivos contienen cierta palabra (ej. "final" o "v2").
+
 # ------------------------------------------------------------
 
-# PEGA TU CÓDIGO AQUÍ
 def contar_palabra_recursivo(lista, palabra, indice):
     if indice == len(lista):
         return 0
