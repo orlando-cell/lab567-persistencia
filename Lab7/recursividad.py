@@ -35,7 +35,12 @@ entregas = [
 # ------------------------------------------------------------
 
 # PEGA TU CÓDIGO AQUÍ
-
+def buscar_estudiante_recursivo(lista, codigo, indice):
+    if indice == len(lista):
+        return None
+    if lista[indice]["codigo"] == codigo:
+        return lista[indice]
+    return buscar_estudiante_recursivo(lista, codigo, indice + 1)
 
 
 # ------------------------------------------------------------
