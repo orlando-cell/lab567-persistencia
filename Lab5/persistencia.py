@@ -39,7 +39,26 @@ def leer_texto():
 # Autor: Zinedine Michael Callirgos Cabanillas
 # ------------------------------------------------------------
 
+def buscar_contacto():
+    print("\n--- BUSCAR CONTACTO ---")
 
+    if not os.path.exists(ARCHIVO_TEXTO):
+        print("No hay contactos registrados.")
+        return
+
+    busqueda = input("Ingrese el nombre a buscar: ").lower()
+    encontrado = False
+
+    with open(ARCHIVO_TEXTO, "r", encoding="utf-8") as archivo:
+        for linea in archivo:
+            datos = linea.strip().split(",")
+
+            if len(datos) == 2 and busqueda in datos[0].lower():
+                print(f"Encontrado -> Nombre: {datos[0]} | Telefono: {datos[1]}")
+                encontrado = True
+
+    if not encontrado:
+        print("No se encontro ningun contacto con ese nombre.")
 
 # ------------------------------------------------------------
 # ETAPA 4: MANEJO DE ARCHIVOS BINARIOS

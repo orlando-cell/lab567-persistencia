@@ -1,13 +1,28 @@
-# Modulo de prestamos
+def registrar_prestamo(lista_equipos):
+    print("\n--- REGISTRAR PRESTAMO ---")
+    codigo = input("Codigo del equipo a prestar:") ")
 
-# ============================================================
-# MODULO DE PRÉSTAMOS
-# Autor: Zinedine Michael Callirgos Cabanillas
-# ============================================================
+    for eq in lista_equipos:
+        if eq["codigo"] == codigo:
+            if eq["estado"] == "Prestado":
+                print("Error: El equipo ya esta prestado.")
+                return
 
-# ------------------------------------------------------------
-# INSTRUCCIONES ZINEDINE:
-# 1. Crea registrar_prestamo(lista): pide código de equipo y estudiante.
-# 2. Crea devolver_equipo(lista): cambia el estado del equipo a disponible.
-# ------------------------------------------------------------
-# PEGA TU CÓDIGO AQUÍ
+            eq["estado"] = "Prestado"
+            print(f"Equipo {eq['nombre']} prestado con exito.")
+            return
+
+    print("Codigo de equipo no existe.")
+
+
+def devolver_equipo(lista_equipos):
+    print("\n--- DEVOLVER EQUIPO ---")
+    codigo = input("Codigo del equipo a devolver: ")
+
+    for eq in lista_equipos:
+        if eq["codigo"] == codigo:
+            eq["estado"] = "Disponible"
+            print("Equipo devuelto.")
+            return
+
+    print("Equipo no encontrado.")
