@@ -5,10 +5,10 @@
 # Autor: Cristian Omar Huamán Rojas
 # ============================================================
 
-# ------------------------------------------------------------
-# INSTRUCCIONES CRISTIAN:
-# Crea la función validar_texto(valor) que devuelva True si hay texto
-# y False si está vacío. Esta función será reutilizada en varios módulos.
-# ------------------------------------------------------------
-# PEGA TU CÓDIGO AQUÍ
+def validar_texto(valor):
+    if valor is None or valor.strip() == "":
+        print("Error: El campo no puede estar vacio.")
+        return False
+    return True
+
 
